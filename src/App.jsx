@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import Homepage from "./pages/Homepage";
 import Pricing from "./pages/Pricing";
@@ -41,10 +41,8 @@ function App() {
         <Route path="/product" element={<Product />} />
         <Route path="/login" element={<Login />} />
         <Route path="/app" element={<AppLayout />}>
-          <Route
-            index
-            element={<CityList cities={cities} isLoading={isLoading} />}
-          />
+          <Route index element={<Navigate replace to="cities" />} />
+          {/* The replace prop controls whether the navigation replaces the current history entry or adds a new one. */}
           <Route
             path="cities"
             element={<CityList cities={cities} isLoading={isLoading} />}
