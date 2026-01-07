@@ -12,12 +12,13 @@ import { useCities } from "../contexts/CitiesContext";
 import styles from "./Map.module.css";
 import { useGeolocation } from "../hooks/useGeolocation";
 import Button from "./Button";
+import { useUrlPosition } from "../hooks/useUrlPosition";
 
 function Map() {
   const { cities } = useCities();
 
   // Catch the Global variable
-  const [searchParams, setSearchParams] = useSearchParams();
+  const [mapLat, mapLng] = useUrlPosition();
   const [mapPosition, setMapPosition] = useState([40, 0]);
   const {
     isLoading: isLoadingPosition,
@@ -25,10 +26,7 @@ function Map() {
     getPosition,
   } = useGeolocation();
 
-  const mapLat = searchParams.get("lat");
-  const mapLng = searchParams.get("lng");
-
-  console.log(mapLat, mapLng);
+  // console.log(mapLat, mapLng);
 
   //Change the searchParams, we need to pass in brand new object to the setSearchParams and then set the new value there (with the complete properties)
   //  <button onClick={() => setSearchParams({ lat: 25, lng: 90 })}>
@@ -92,7 +90,7 @@ function DetectClick() {
 
   useMapEvent({
     click: (e) => {
-      console.log(e);
+      // console.log(e);
       navigate(`form?lat=${e.latlng.lat}&lng=${e.latlng.lng}`);
       // This will navigate/change the link with global data {lat & lng} -> change the {mapLat & mapLng} -> triggers the useEffect -> change mapPosition thru setMapPosition inside of th useEffect -> triggers the <ChangeCenter /> to center the map to the clicked position
 
