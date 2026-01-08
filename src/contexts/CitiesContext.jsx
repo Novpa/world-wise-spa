@@ -37,8 +37,32 @@ function CitiesProvider({ children }) {
     }
   };
 
+  const createCity = async (newCity) => {
+    try {
+      setIsLoading(true);
+      const res = await fetch(`${BASE_URL}`, {
+        method: "POST",
+        body: JSON.stringify(newCity),
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+      const data = await res.json();
+
+      // This is optional, as after adding the new city, we do not make any request to the API so we need to manually refresh the page.
+      // To avoid this behavior, we want to re-render the page so we keep the cities in sync with the data that we've just submit.
+      setCities((cities) => [...cities, data]);
+    } catch {
+      alert("There was an error loading data..");
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
   return (
-    <CitiesContext.Provider value={{ cities, isLoading, currentCity, getCity }}>
+    <CitiesContext.Provider
+      value={{ cities, isLoading, currentCity, getCity, createCity }}
+    >
       {children}
     </CitiesContext.Provider>
   );

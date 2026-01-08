@@ -10,7 +10,7 @@
         "lat": 38.727881642324164,
         "lng": -9.140900099907554
       },
-      "id": 73930385
+      "id": "73930385"
     },
     {
       "cityName": "Madrid",
@@ -22,7 +22,7 @@
         "lat": 40.46635901755316,
         "lng": -3.7133789062500004
       },
-      "id": 17806751
+      "id": "17806751"
     },
     {
       "cityName": "Berlin",
@@ -34,7 +34,91 @@
         "lat": 52.53586782505711,
         "lng": 13.376933665713324
       },
-      "id": 98443197
+      "id": "98443197"
+    },
+    {
+      "id": "4efc",
+      "cityName": "Villamayor de Calatrava",
+      "country": "Spain",
+      "emoji": "🇪🇸",
+      "date": "2026-01-08T16:19:14.805Z",
+      "notes": "sdsd",
+      "position": {
+        "lat": "38.79943292300269",
+        "lng": "-4.2568636295447035"
+      }
+    },
+    {
+      "id": "2832",
+      "cityName": "Ulytau",
+      "country": "Kazakhstan",
+      "emoji": "🇰🇿",
+      "date": "2026-01-08T16:19:40.637Z",
+      "notes": "",
+      "position": {
+        "lat": "48.30901151020075",
+        "lng": "66.47546064454522"
+      }
+    },
+    {
+      "id": "98ee",
+      "cityName": "Torrijo del Campo",
+      "country": "Spain",
+      "emoji": "🇪🇸",
+      "date": "2026-01-08T16:22:30.435Z",
+      "notes": "",
+      "position": {
+        "lat": "40.81034323357567",
+        "lng": "-1.3132603319672922"
+      }
+    },
+    {
+      "id": "1481",
+      "cityName": "Jawa Timur",
+      "country": "Indonesia",
+      "emoji": "🇮🇩",
+      "date": "2026-01-08T16:22:47.718Z",
+      "notes": "",
+      "position": {
+        "lat": "-8.34568047581072",
+        "lng": "111.9989920386462"
+      }
+    },
+    {
+      "id": "3452",
+      "cityName": "Vila Flor",
+      "country": "Portugal",
+      "emoji": "🇵🇹",
+      "date": "2026-01-08T16:26:35.986Z",
+      "notes": "",
+      "position": {
+        "lat": "41.30780634963517",
+        "lng": "-7.159726914283465"
+      }
+    },
+    {
+      "id": "71ad",
+      "cityName": "Peille",
+      "country": "France",
+      "emoji": "🇫🇷",
+      "date": "2026-01-08T16:26:53.371Z",
+      "notes": "",
+      "position": {
+        "lat": "43.83267002129627",
+        "lng": "7.4146136516401935"
+      }
+    },
+    {
+      "id": "5889",
+      "cityName": "Kecamatan Payangan",
+      "country": "Indonesia",
+      "emoji": "🇮🇩",
+      "date": "2026-01-08T16:32:03.027Z",
+      "notes": "",
+      "position": {
+        "lat": "-8.348117484084849",
+        "lng": "115.25880714227988"
+      }
     }
   ]
 }
