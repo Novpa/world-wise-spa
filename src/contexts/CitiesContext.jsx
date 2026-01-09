@@ -68,7 +68,7 @@ function CitiesProvider({ children }) {
         method: "DELETE",
       });
 
-      // This is optional, as after adding the new city, we do not make any request to the API so we need to manually refresh the page.
+      // This is optional, as after deleting the new city, we do not make any request to the API so we need to manually refresh the page.
       // To avoid this behavior, we want to re-render the page so we keep the cities in sync with the data that we've just submit.
       setCities((cities) => cities.filter((city) => city.id !== id));
     } catch {
