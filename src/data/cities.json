@@ -73,27 +73,15 @@
       }
     },
     {
-      "id": "1c9b",
-      "cityName": "Ablitas",
-      "country": "Spain",
-      "emoji": "🇪🇸",
-      "date": "2026-01-09T05:06:07.451Z",
+      "id": "9aad",
+      "cityName": "El Ouata",
+      "country": "Algeria",
+      "emoji": "🇩🇿",
+      "date": "2026-01-09T09:40:13.058Z",
       "notes": "",
       "position": {
-        "lat": "41.979088475668",
-        "lng": "-1.6186011025649318"
-      }
-    },
-    {
-      "id": "21ea",
-      "cityName": "Valpacos",
-      "country": "Portugal",
-      "emoji": "🇵🇹",
-      "date": "2026-01-09T05:07:24.036Z",
-      "notes": "",
-      "position": {
-        "lat": "41.53836137455853",
-        "lng": "-7.423477286418018"
+        "lat": "30.126251079927233",
+        "lng": "-1.5118842481253685"
       }
     }
   ]
