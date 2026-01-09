@@ -1,54 +1,6 @@
 {
   "cities": [
     {
-      "id": "3d59",
-      "cityName": "Pitiegua",
-      "country": "Spain",
-      "emoji": "🇪🇸",
-      "date": "2026-01-09T05:02:24.273Z",
-      "notes": "",
-      "position": {
-        "lat": "41.06097648480898",
-        "lng": "-5.467328693086674"
-      }
-    },
-    {
-      "id": "d244",
-      "cityName": "Ponferrada",
-      "country": "Spain",
-      "emoji": "🇪🇸",
-      "date": "2026-01-09T05:02:26.836Z",
-      "notes": "",
-      "position": {
-        "lat": "42.45420099667935",
-        "lng": "-6.454763773049082"
-      }
-    },
-    {
-      "id": "faef",
-      "cityName": "Birine",
-      "country": "Algeria",
-      "emoji": "🇩🇿",
-      "date": "2026-01-09T05:02:29.295Z",
-      "notes": "",
-      "position": {
-        "lat": "35.742547266588915",
-        "lng": "3.348252755540169"
-      }
-    },
-    {
-      "id": "23da",
-      "cityName": "Malagon",
-      "country": "Spain",
-      "emoji": "🇪🇸",
-      "date": "2026-01-09T05:03:12.387Z",
-      "notes": "",
-      "position": {
-        "lat": "39.24695843391064",
-        "lng": "-4.016701646346575"
-      }
-    },
-    {
       "id": "0d6e",
       "cityName": "Fos",
       "country": "France",
@@ -82,6 +34,30 @@
       "position": {
         "lat": "30.126251079927233",
         "lng": "-1.5118842481253685"
+      }
+    },
+    {
+      "id": "2768",
+      "cityName": "Puebla del Maestre",
+      "country": "Spain",
+      "emoji": "🇪🇸",
+      "date": "2026-01-09T11:22:40.233Z",
+      "notes": "",
+      "position": {
+        "lat": "38.1145289379262",
+        "lng": "-6.060767030389436"
+      }
+    },
+    {
+      "id": "4919",
+      "cityName": "Ghmate",
+      "country": "Morocco",
+      "emoji": "🇲🇦",
+      "date": "2026-01-09T11:24:27.182Z",
+      "notes": "",
+      "position": {
+        "lat": "31.424657013649842",
+        "lng": "-7.708951740543133"
       }
     }
   ]
