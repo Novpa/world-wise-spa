@@ -31,7 +31,7 @@ function CitiesProvider({ children }) {
       const data = await res.json();
       setCurrentCity(data);
     } catch {
-      alert("There was an error loading data..");
+      alert("There was an error getting data..");
     } finally {
       setIsLoading(false);
     }
@@ -53,7 +53,26 @@ function CitiesProvider({ children }) {
       // To avoid this behavior, we want to re-render the page so we keep the cities in sync with the data that we've just submit.
       setCities((cities) => [...cities, data]);
     } catch {
-      alert("There was an error loading data..");
+      alert("There was an error creating data..");
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
+  const deleteCity = async (id) => {
+    try {
+      setIsLoading(true);
+
+      // We don't have to store the deleted value
+      await fetch(`${BASE_URL}/${id}`, {
+        method: "DELETE",
+      });
+
+      // This is optional, as after adding the new city, we do not make any request to the API so we need to manually refresh the page.
+      // To avoid this behavior, we want to re-render the page so we keep the cities in sync with the data that we've just submit.
+      setCities((cities) => cities.filter((city) => city.id !== id));
+    } catch {
+      alert("There was an error deleting data..");
     } finally {
       setIsLoading(false);
     }
@@ -61,7 +80,14 @@ function CitiesProvider({ children }) {
 
   return (
     <CitiesContext.Provider
-      value={{ cities, isLoading, currentCity, getCity, createCity }}
+      value={{
+        cities,
+        isLoading,
+        currentCity,
+        getCity,
+        createCity,
+        deleteCity,
+      }}
     >
       {children}
     </CitiesContext.Provider>
