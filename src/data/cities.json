@@ -1,28 +1,3 @@
 {
-  "cities": [
-    {
-      "id": "534b",
-      "cityName": "Sant",
-      "country": "Mongolia",
-      "emoji": "🇲🇳",
-      "date": "2026-01-09T02:41:13.207Z",
-      "notes": "",
-      "position": {
-        "lat": "46.11953340477606",
-        "lng": "104.1615762230717"
-      }
-    },
-    {
-      "id": "ad47",
-      "cityName": "Todzhinskiy Rayon",
-      "country": "Russian Federation (the)",
-      "emoji": "🇷🇺",
-      "date": "2026-01-09T02:41:40.633Z",
-      "notes": "",
-      "position": {
-        "lat": "52.58581615959398",
-        "lng": "95.14902608314418"
-      }
-    }
-  ]
+  "cities": []
 }
