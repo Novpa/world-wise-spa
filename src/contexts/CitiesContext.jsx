@@ -1,45 +1,116 @@
-import { createContext, useContext, useEffect, useState } from "react";
+import { control } from "leaflet";
+import {
+  createContext,
+  useContext,
+  useEffect,
+  useState,
+  useReducer,
+} from "react";
 
 const BASE_URL = "http://localhost:9000/cities";
 const CitiesContext = createContext();
 
+const initialState = {
+  cities: [],
+  currentCity: {},
+  isLoading: false,
+  error: "",
+};
+
+const reducer = (state, action) => {
+  switch (action.type) {
+    case "cities/loaded":
+      return {
+        ...state,
+        isLoading: true,
+      };
+    case "city/loaded":
+      return {
+        ...state,
+        isLoading: true,
+      };
+    case "cities/received":
+      return {
+        ...state,
+        cities: action.payload,
+        isLoading: false,
+      };
+    case "city/received":
+      return {
+        ...state,
+        currentCity: action.payload,
+        isLoading: false,
+      };
+    case "city/created":
+      return {
+        ...state,
+        cities: [...state.cities, action.payload],
+        currentCity: action.payload,
+        isLoading: false,
+      };
+    case "city/deleted":
+      return {
+        ...state,
+        cities: state.cities.filter((city) => city.id !== action.payload),
+        isLoading: false,
+        currentCity: {},
+      };
+    case "rejected":
+      return {
+        ...state,
+        error: action.payload,
+        isLoading: false,
+      };
+
+    default:
+      throw new Error("Unknown action:", action.type);
+  }
+};
+
 function CitiesProvider({ children }) {
-  const [cities, setCities] = useState([]);
-  const [isLoading, setIsLoading] = useState(false);
-  const [currentCity, setCurrentCity] = useState({});
+  const [{ cities, currentCity, isLoading, error }, dispatch] = useReducer(
+    reducer,
+    initialState
+  );
+  // const [cities, setCities] = useState([]);
+  // const [isLoading, setIsLoading] = useState(false);
+  // const [currentCity, setCurrentCity] = useState({});
 
   useEffect(() => {
     const fetchCities = async () => {
       try {
-        setIsLoading(true);
+        dispatch({ type: "cities/loaded" });
         const res = await fetch(`${BASE_URL}`);
         const data = await res.json();
-        setCities(data);
+        dispatch({ type: "cities/received", payload: data });
       } catch {
-        alert("There was an error loading data..");
-      } finally {
-        setIsLoading(false);
+        dispatch({
+          type: "rejected",
+          payload: "There was an error loading cities..",
+        });
       }
     };
     fetchCities();
   }, []);
 
   const getCity = async (id) => {
+    if (currentCity.id === id) return;
     try {
-      setIsLoading(true);
+      dispatch({ type: "city/loaded" });
       const res = await fetch(`${BASE_URL}/${id}`);
       const data = await res.json();
-      setCurrentCity(data);
+      dispatch({ type: "city/received", payload: data });
     } catch {
-      alert("There was an error getting data..");
-    } finally {
-      setIsLoading(false);
+      dispatch({
+        type: "rejected",
+        payload: "There was an error loading city..",
+      });
     }
   };
 
   const createCity = async (newCity) => {
     try {
-      setIsLoading(true);
+      dispatch({ type: "city/loaded" });
       const res = await fetch(`${BASE_URL}`, {
         method: "POST",
         body: JSON.stringify(newCity),
@@ -51,30 +122,31 @@ function CitiesProvider({ children }) {
 
       // This is optional, as after adding the new city, we do not make any request to the API so we need to manually refresh the page.
       // To avoid this behavior, we want to re-render the page so we keep the cities in sync with the data that we've just submit.
-      setCities((cities) => [...cities, data]);
+      dispatch({ type: "city/created", payload: data });
     } catch {
-      alert("There was an error creating data..");
-    } finally {
-      setIsLoading(false);
+      dispatch({
+        type: "rejected",
+        payload: "There was an error creating city..",
+      });
     }
   };
 
   const deleteCity = async (id) => {
     try {
-      setIsLoading(true);
-
+      dispatch({ type: "city/loaded" });
       // We don't have to store the deleted value
       await fetch(`${BASE_URL}/${id}`, {
         method: "DELETE",
       });
 
-      // This is optional, as after deleting the new city, we do not make any request to the API so we need to manually refresh the page.
+      // As after deleting the new city, we do not make any request to the API so we need to manually refresh the page.
       // To avoid this behavior, we want to re-render the page so we keep the cities in sync with the data that we've just submit.
-      setCities((cities) => cities.filter((city) => city.id !== id));
+      dispatch({ type: "city/deleted", payload: id });
     } catch {
-      alert("There was an error deleting data..");
-    } finally {
-      setIsLoading(false);
+      dispatch({
+        type: "rejected",
+        payload: "There was an error creating city..",
+      });
     }
   };
 

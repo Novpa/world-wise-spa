@@ -1,3 +1,100 @@
 {
-  "cities": []
+  "cities": [
+    {
+      "id": "3d59",
+      "cityName": "Pitiegua",
+      "country": "Spain",
+      "emoji": "🇪🇸",
+      "date": "2026-01-09T05:02:24.273Z",
+      "notes": "",
+      "position": {
+        "lat": "41.06097648480898",
+        "lng": "-5.467328693086674"
+      }
+    },
+    {
+      "id": "d244",
+      "cityName": "Ponferrada",
+      "country": "Spain",
+      "emoji": "🇪🇸",
+      "date": "2026-01-09T05:02:26.836Z",
+      "notes": "",
+      "position": {
+        "lat": "42.45420099667935",
+        "lng": "-6.454763773049082"
+      }
+    },
+    {
+      "id": "faef",
+      "cityName": "Birine",
+      "country": "Algeria",
+      "emoji": "🇩🇿",
+      "date": "2026-01-09T05:02:29.295Z",
+      "notes": "",
+      "position": {
+        "lat": "35.742547266588915",
+        "lng": "3.348252755540169"
+      }
+    },
+    {
+      "id": "23da",
+      "cityName": "Malagon",
+      "country": "Spain",
+      "emoji": "🇪🇸",
+      "date": "2026-01-09T05:03:12.387Z",
+      "notes": "",
+      "position": {
+        "lat": "39.24695843391064",
+        "lng": "-4.016701646346575"
+      }
+    },
+    {
+      "id": "0d6e",
+      "cityName": "Fos",
+      "country": "France",
+      "emoji": "🇫🇷",
+      "date": "2026-01-09T05:03:24.260Z",
+      "notes": "",
+      "position": {
+        "lat": "42.859704979977785",
+        "lng": "0.7320021333776738"
+      }
+    },
+    {
+      "id": "dc96",
+      "cityName": "Aranga",
+      "country": "Spain",
+      "emoji": "🇪🇸",
+      "date": "2026-01-09T05:05:18.024Z",
+      "notes": "",
+      "position": {
+        "lat": "43.22771595699314",
+        "lng": "-7.949780949385039"
+      }
+    },
+    {
+      "id": "1c9b",
+      "cityName": "Ablitas",
+      "country": "Spain",
+      "emoji": "🇪🇸",
+      "date": "2026-01-09T05:06:07.451Z",
+      "notes": "",
+      "position": {
+        "lat": "41.979088475668",
+        "lng": "-1.6186011025649318"
+      }
+    },
+    {
+      "id": "21ea",
+      "cityName": "Valpacos",
+      "country": "Portugal",
+      "emoji": "🇵🇹",
+      "date": "2026-01-09T05:07:24.036Z",
+      "notes": "",
+      "position": {
+        "lat": "41.53836137455853",
+        "lng": "-7.423477286418018"
+      }
+    }
+  ]
 }
