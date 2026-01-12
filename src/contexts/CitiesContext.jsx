@@ -3,7 +3,7 @@ import {
   createContext,
   useContext,
   useEffect,
-  useState,
+  useCallback,
   useReducer,
 } from "react";
 
@@ -93,20 +93,24 @@ function CitiesProvider({ children }) {
     fetchCities();
   }, []);
 
-  const getCity = async (id) => {
-    if (currentCity.id === id) return;
-    try {
-      dispatch({ type: "city/loaded" });
-      const res = await fetch(`${BASE_URL}/${id}`);
-      const data = await res.json();
-      dispatch({ type: "city/received", payload: data });
-    } catch {
-      dispatch({
-        type: "rejected",
-        payload: "There was an error loading city..",
-      });
-    }
-  };
+  const getCity = useCallback(
+    async (id) => {
+      if (currentCity.id === id) return;
+
+      try {
+        dispatch({ type: "city/loaded" });
+        const res = await fetch(`${BASE_URL}/${id}`);
+        const data = await res.json();
+        dispatch({ type: "city/received", payload: data });
+      } catch {
+        dispatch({
+          type: "rejected",
+          payload: "There was an error loading city..",
+        });
+      }
+    },
+    [currentCity.id]
+  );
 
   const createCity = async (newCity) => {
     try {
@@ -159,8 +163,7 @@ function CitiesProvider({ children }) {
         getCity,
         createCity,
         deleteCity,
-      }}
-    >
+      }}>
       {children}
     </CitiesContext.Provider>
   );
