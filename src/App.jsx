@@ -4,16 +4,6 @@ import { CitiesProvider } from "./contexts/CitiesContext";
 import { AuthProvider } from "./contexts/AuthContext";
 import ProtectedRoute from "./pages/ProtectedRoute";
 
-// import Homepage from "./pages/Homepage";
-// import Pricing from "./pages/Pricing";
-// import Product from "./pages/Product";
-// import Login from "./pages/Login";
-// import AppLayout from "./pages/AppLayout";
-// import PageNotFound from "./pages/PageNotFound";
-
-// dist/assets/index-Cl-QEqgy.css   31.26 kB │ gzip:   5.19 kB
-// dist/assets/index-BBYr7cpw.js   566.66 kB │ gzip: 165.74 kB
-
 const Homepage = lazy(() => import("./pages/Homepage"));
 const Product = lazy(() => import("./pages/Product"));
 const Login = lazy(() => import("./pages/Login"));
